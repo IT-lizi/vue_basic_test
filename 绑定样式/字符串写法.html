@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .basic {
+            height: 200px;
+            width: 500px;
+            border: 2px solid pink;
+        }
+        
+        .happy {
+            background-color: orange;
+        }
+        
+        .sad {
+            background-color: skyblue;
+        }
+    </style>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div class="basic" :class="mood" @click="changeMood"></div>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                mood: 'normal'
+            },
+            methods: {
+                changeMood() {
+                    const arr = ['happy', 'sad', 'normal'];
+                    var index = Math.floor(Math.random() * 3);
+                    this.mood = arr[index];
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

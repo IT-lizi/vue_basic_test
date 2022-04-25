@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>欢迎来到{{adress}}</h1>
+        <button v-on:click="showInfo">点我去1不传参</button>
+        <button @click="showInfo2($event,24)">点我去2传参简写</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                adress: '福建'
+            },
+            methods: {
+                showInfo: function(event) {
+                    console.log(event.target)
+                },
+                showInfo2: function(event, number) {
+                    console.log(event, number)
+                }
+            }
+        })
+    </script>
+</body>
+
+
+</html>

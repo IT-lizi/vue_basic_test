@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <!-- 准备好一个容器 -->
+
+    <div id="root">
+        <h1>插值语法</h1>
+        <h3>welcome ,{{name}}来到{{adress}}</h3>
+        <hr/>
+        <h1>指令语法</h1>
+        <a v-bind:href="url">点击去百度搜索</a>
+    </div>
+    <script src="../js/vue.js">
+    </script>
+    <script>
+        Vue.config.productionTip = false; //阻止vue启动自动生成生产提示
+        new Vue({
+            el: '#root',
+            data: {
+                name: 'lizi',
+                adress: '福建',
+                url: 'www.baidu.com'
+            }
+        }); //中间参数为配置对象
+    </script>
+</body>
+
+</html>

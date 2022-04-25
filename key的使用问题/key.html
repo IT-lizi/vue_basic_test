@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    //最好用唯一标识来作为key值
+    <div id="root">
+        <h2>人员列表(遍历数组)</h2>
+        <button @click="add">加入一个老李</button>
+        <ul>
+            <li v-for="p in persons" :key="p.id">
+                {{p.name}}--{{p.age}}
+                <input type="text">
+            </li>
+
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        new Vue({
+            el: '#root',
+            data: {
+                persons: [{
+                    id: '01',
+                    name: 'crj',
+                    age: 22
+                }, {
+                    id: '02',
+                    name: 'liz',
+                    age: 23,
+                }]
+            },
+            methods: {
+                add() {
+                    const p = {
+                        id: '03',
+                        name: 'lss',
+                        age: 25
+                    };
+                    this.persons.unshift(p);
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <script>
+        Vue.config.productionTip = false;
+        let num = 50;
+        let person = {
+            name: 'li',
+            sex: 'man'
+        }
+        console.log(person);
+        Object.defineProperty(person, 'age', {
+
+            get() {
+                console.log('有人读取了属性值');
+                return num;
+            },
+            set(value) {
+                console.log('有人修改了属性值且值为',
+                    value);
+                num = value
+            }
+        })
+
+        // console.log(Object.keys(persons));
+    </script>
+</body>
+
+</html>
